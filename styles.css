@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+/* light mode */
+:root{
+  --main-color: #222;
+  --sub-color: #ddd;
+  --bg-color: white;
+}
+
+/* dark mode */
+:root{
+  --main-color: #eee;
+  --sub-color: #646669;
+  --bg-color: #323437;
+  --submain-color: #e2b714;
+}
+
+html{
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+  font-family: 'Roboto Mono';
+  letter-spacing: 1px;
+  margin: 0;
+/*   height: 100%; */
+  padding: 0;
+  grid-gap: 2rem;
+  margin: 0 2rem;
+  background: var(--bg-color);
+  min-width: 800px;
+  min-height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem auto;
+  box-sizing: border-box;
+  border: 2rem solid transparent;
+}
+
+.mainGrid{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.nav{
+/*   position: fixed;
+  top: 1rem;
+  left: 5rem; */
+  height: 4rem;
+  font-weight: 900;
+  line-height: 4rem;
+  font-size: 3rem;
+  display: flex;
+}
+
+.nav .menu{
+  display: flex;
+  user-select: none;
+}
+
+.nav .title, .nav .menu div{
+  color: var(--sub-color);
+  margin-right: 2rem;
+  transition: .2s;
+  user-select: none;
+}
+
+.nav .title{
+  color: var(--submain-color);
+}
+
+.nav .menu div:hover{
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.footer{
+/*   position: fixed;
+  top: calc(100vh - 1rem - 100px);
+  left: 5rem; */
+  height: 4rem;
+  font-weight: 900;
+  line-height: 4rem;
+  font-size: 3rem;
+  color: var(--sub-color);
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.middle{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.gradient{
+  width: 100%;
+/*   background: red; */
+  background-image: linear-gradient(to right, transparent, var(--bg-color)); 
+  z-index:99;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.inputBox{
+  height: 100px;
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  background-color: var(--bg-color);
+}
+
+.test, .title, .future{
+  display: inline-block;
+  grid-auto-flow: column;
+}
+
+.input{
+  position: absolute;
+  margin-right: 2rem;
+  z-index: 100;
+}
+@media only screen and (max-width: 600px) {
+
+}
+
+.futureWrap{
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 16%;
+  width: 100%;
+  height: 100%;
+}
+
+.futureWrap .gradient, .futureWrap .future{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.future{
+  max-width: 50vw;
+  max-height: 11vw;
+  max-width: calc(100vw - 352px - 20rem);
+  overflow: hidden;
+  user-select: none;
+  z-index:98;
+}
+
+.futureBox{
+  height: 60px;
+  font-weight: 700;
+  line-height: 40px;
+  font-size: 2.5rem;
+  margin: .5rem;
+  color: var(--sub-color);
+  position: relative;
+  float: left;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.result{
+  font-weight: 900;
+/*   line-height: 100px; */
+  font-size: 3rem;
+  color: var(--sub-color);
+  position: absolute;
+  left: 12%;
+}
+
+.result div div{
+  display: inline-block;
+  margin-left: 2rem;
+  color: var(--main-color);
+}
+
+.timer{
+  height: 100px;
+    font-weight: 900;
+    line-height: 100px;
+    font-size: 3rem;
+    color: var(--submain-color);
+    width: 5.2rem;
+    max-width: 5.2rem;
+    text-align: right;
+    min-width: 5.2rem;
+    transform-origin: 0 0;
+    position: absolute;
+    top: 60%;
+    left: 15.25%;
+    user-select: none;
+}
+
+
+
+
+
+.separator{
+  height: 150px;
+  background-color: var(--sub-color);
+  width: 6px;
+  margin: 0 2rem;
+  transform: rotate(90deg);
+  position: absolute;
+  left: 18%;
+  top: 52%;
+}
+
+
+.inputBox letter{
+  font-weight: 700;
+  height: 100px;
+  line-height: 100px;
+  font-size: 2.5rem;
+  color: var(--sub-color);
+}
+
+letter.correct{
+  color: var(--main-color);;
+}
+
+letter.incorrect{
+  color: #F44336;
+}
+
+.settings, .readme, .git {
+  color: var(--sub-color) !important;
+}
+
+.settings:hover, .readme:hover, .git:hover {
+  color: white !important;
+}
+
+.hasTyped {
+  color: white !important;
+}
